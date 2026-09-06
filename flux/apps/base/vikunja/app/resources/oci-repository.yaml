@@ -6,7 +6,7 @@ spec:
   interval: 1h
   url: oci://codeberg.org/kasefuchs/helm-charts/vikunja
   ref:
-    tag: "0.1.1"
+    tag: "0.1.2"
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
