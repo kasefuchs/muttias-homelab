@@ -6,7 +6,7 @@ spec:
   interval: 1h
   url: oci://codeberg.org/kasefuchs/helm-charts/s-ui
   ref:
-    tag: "0.2.3"
+    tag: "0.2.4"
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
