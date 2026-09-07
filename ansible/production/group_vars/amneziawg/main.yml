@@ -1,7 +1,31 @@
-amneziawg_install_kmod: false
+amneziawg_config_interface: "{{ lookup('community.general.merge_variables', '^amneziawg_config_interface_') }}"
+amneziawg_config_interface_base:
+  MTU: 1360
+  HeaderProtectionKey: "{{ amneziawg_config_header_protection_key }}"
+  RekeyAfterTime: 100-120
+  RekeyTimeout: 3-7
+  RejectAfterTime: 150-180
+  KeepaliveTimeout: 5-15
+  MaxHandshakeAttempts: 15-20
+  PostUp: >
+    sysctl -w net.ipv4.ip_forward=1;
+    sysctl -w net.ipv6.conf.all.forwarding=1;
+    sysctl -w net.core.default_qdisc=fq;
+    sysctl -w net.ipv4.tcp_congestion_control=bbr;
+    sysctl -w net.core.rmem_max=16777216;
+    sysctl -w net.core.wmem_max=16777216;
+    sysctl -w net.core.rmem_default=262144;
+    sysctl -w net.core.wmem_default=262144;
+    sysctl -w net.ipv4.udp_mem="4096 87380 16777216";
+    iptables -t mangle -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu;
+    ip6tables -t mangle -A FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
+  PreDown: >
+    iptables -t mangle -D FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu;
+    ip6tables -t mangle -D FORWARD -p tcp --tcp-flags SYN,RST SYN -j TCPMSS --clamp-mss-to-pmtu
 amneziawg_config_public_keys:
   apex: TjBHj08ZK6qC0JeVt1ROgVzV47qEtkBetJCuKvvqR1c=
   pixel: xPZOcm9SUrkgAtmIT5c4AgaM7u1CulDIFs+gQlbN/V0=
   silky: Sakfi06vKCQXq6uEvDMCJjew1SlZDEjtsbg4tqw4KTg=
   mala: fXH/RoOZnvhbaHl9J4hdvXvJxmwgkVGVkJbYCde13y8=
   lestat: U3I7WxqjY5xv/Th7WkontHgSmectF75pMapspFpZJQM=
+  emmie: ncUlf0jHvSDigWTwaxrLmjY7MXbNgnhj53/NYmONDmc=

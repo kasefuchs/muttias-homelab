@@ -4,3 +4,4 @@ match_type: doublestar
 formatter:
   force_array_style: block
   force_quote_style: double
+  scan_folded_as_literal: true

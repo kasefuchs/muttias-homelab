@@ -1,0 +1,27 @@
+amneziawg_config_interface_host:
+  Address: 10.45.16.24/24, fd45:45:45:10::24/64
+  ListenPort: 48761
+  PrivateKey: "{{ amneziawg_config_private_key }}"
+amneziawg_config_peers:
+  # silky
+  - PublicKey: "{{ amneziawg_config_public_keys.silky }}"
+    PresharedKey: "{{ amneziawg_config_preshared_keys.silky }}"
+    AllowedIPs: 10.45.16.20/32, fd45:45:45:10::20/128
+    Endpoint: silky.kasefuchs.net:48764
+  # mala
+  - PublicKey: "{{ amneziawg_config_public_keys.mala }}"
+    PresharedKey: "{{ amneziawg_config_preshared_keys.mala }}"
+    AllowedIPs: 10.45.32.16/32, fd45:45:45:20::16/128
+    Endpoint: mala.kasefuchs.net:48248
+  # lestat
+  - PublicKey: "{{ amneziawg_config_public_keys.lestat }}"
+    PresharedKey: "{{ amneziawg_config_preshared_keys.lestat }}"
+    AllowedIPs: 10.45.16.16/32, fd45:45:45:10::16/128
+  # apex
+  - PublicKey: "{{ amneziawg_config_public_keys.apex }}"
+    PresharedKey: "{{ amneziawg_config_preshared_keys.apex }}"
+    AllowedIPs: 10.45.224.16/32, fd45:45:45:e0::16/128
+  # pixel
+  - PublicKey: "{{ amneziawg_config_public_keys.pixel }}"
+    PresharedKey: "{{ amneziawg_config_preshared_keys.pixel }}"
+    AllowedIPs: 10.45.224.20/32, fd45:45:45:e0::20/128

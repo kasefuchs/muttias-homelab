@@ -1,19 +1,17 @@
-amneziawg_config_interface:
+amneziawg_config_interface_host:
   Address: 10.45.32.16/24, fd45:45:45:20::16/64
-  ListenPort: 48526
+  ListenPort: 48248
   PrivateKey: "{{ amneziawg_config_private_key }}"
-  PostUp: sysctl -w net.ipv4.ip_forward=1; sysctl -w net.ipv6.conf.all.forwarding=1
 amneziawg_config_peers:
+  # emmie
+  - PublicKey: "{{ amneziawg_config_public_keys.emmie }}"
+    PresharedKey: "{{ amneziawg_config_preshared_keys.emmie }}"
+    AllowedIPs: 10.45.0.0/16, fd45:45:45::/48
+    Endpoint: emmie.kasefuchs.net:48761
+    PersistentKeepalive: 25
   # silky
   - PublicKey: "{{ amneziawg_config_public_keys.silky }}"
     PresharedKey: "{{ amneziawg_config_preshared_keys.silky }}"
-    AllowedIPs: 10.45.0.0/16, fd45:45:45::/48
-    Endpoint: silky.kasefuchs.net:48092
-  # apex
-  - PublicKey: "{{ amneziawg_config_public_keys.apex }}"
-    PresharedKey: "{{ amneziawg_config_preshared_keys.apex }}"
-    AllowedIPs: 10.45.224.16/32, fd45:45:45:e0::16/128
-  # pixel
-  - PublicKey: "{{ amneziawg_config_public_keys.pixel }}"
-    PresharedKey: "{{ amneziawg_config_preshared_keys.pixel }}"
-    AllowedIPs: 10.45.224.20/32, fd45:45:45:e0::20/128
+    AllowedIPs: 10.45.16.20/32, fd45:45:45:10::20/128
+    Endpoint: silky.kasefuchs.net:48764
+    PersistentKeepalive: 25
