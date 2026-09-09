@@ -1,0 +1,10 @@
+k3s_agent_config:
+  token: "{{ k3s_agent_config_token }}"
+  server: https://10.45.16.20:6443
+  node-ip: 10.45.16.24,fd45:45:45:10::24
+  node-external-ip: 138.124.255.126,2a12:bec4:1280:45::2
+  node-label:
+    - topology.kubernetes.io/region=cis-west
+    - node-role.kubernetes.io/gateway=true
+  node-taint:
+    - node-role.kubernetes.io/gateway:NoSchedule

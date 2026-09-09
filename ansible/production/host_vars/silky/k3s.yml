@@ -14,5 +14,6 @@ k3s_server_config:
   advertise-address: 10.45.16.20
   node-label:
     - topology.kubernetes.io/region=cis-west
+    - node.kubernetes.io/exclude-from-external-load-balancers=true
   node-taint:
     - node-role.kubernetes.io/control-plane:NoSchedule
