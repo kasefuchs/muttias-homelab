@@ -22,6 +22,8 @@ spec:
     kubernetes:
       pipelinesAsCode:
         enable: true
+        settings:
+          tekton-dashboard-url: https://tekton.${CLUSTER_DOMAIN}
   tektonpruner:
     disabled: false
     global-config:

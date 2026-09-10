@@ -9,7 +9,9 @@ spec:
       appservice:
         id: discord
       bridge:
+        public_address: https://discord.mautrix.${CLUSTER_DOMAIN}
         avatar_proxy_key: "$BRIDGE_AVATAR_PROXY_KEY"
         direct_media:
           enabled: true
           server_key: "$BRIDGE_DIRECT_MEDIA_SERVER_KEY"
+          server_name: discord.mautrix.${CLUSTER_DOMAIN}

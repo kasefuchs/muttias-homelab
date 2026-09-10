@@ -6,5 +6,4 @@ resources:
 components:
   - ../../../base/mautrix-bridge/app/components/discord
 patches:
-  - path: patches/route.yaml
   - path: patches/config.yaml

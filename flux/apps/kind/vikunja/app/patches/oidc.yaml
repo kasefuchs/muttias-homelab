@@ -1,8 +1,0 @@
-apiVersion: pocketid.internal/v1alpha1
-kind: PocketIDOIDCClient
-metadata:
-  name: vikunja
-spec:
-  launchUrl: https://vikunja.kind.homelab.test
-  callbackUrls:
-    - https://vikunja.kind.homelab.test/auth/openid/pocketid

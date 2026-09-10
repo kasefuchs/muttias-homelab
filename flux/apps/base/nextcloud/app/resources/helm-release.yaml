@@ -37,6 +37,8 @@ spec:
         passwordKey: password
     httpRoute:
       enabled: true
+      hostnames:
+        - nextcloud.${CLUSTER_DOMAIN}
       parentRefs:
         - group: gateway.networking.k8s.io
           kind: ListenerSet
@@ -45,6 +47,7 @@ spec:
     phpClientHttpsFix:
       enabled: true
     nextcloud:
+      host: nextcloud.${CLUSTER_DOMAIN}
       objectStore:
         s3:
           enabled: true

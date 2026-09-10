@@ -25,12 +25,16 @@ spec:
     route:
       main:
         enabled: true
+        hostnames:
+          - vikunja.${CLUSTER_DOMAIN}
         parentRefs:
           - group: gateway.networking.k8s.io
             kind: ListenerSet
             name: external
             namespace: gateway-system
     config:
+      service:
+        publicurl: https://vikunja.${CLUSTER_DOMAIN}
       log:
         format: structured
       database:

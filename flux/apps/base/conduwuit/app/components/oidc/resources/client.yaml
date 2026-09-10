@@ -4,10 +4,13 @@ metadata:
   name: conduwuit
 spec:
   name: Continuwuity
+  logo:
+    logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/continuwuity.svg
+  secret:
+    name: conduwuit-oidc-credentials
+  launchUrl: https://uwuity.${CLUSTER_DOMAIN}
+  callbackUrls:
+    - https://uwuity.${CLUSTER_DOMAIN}/_continuwuity/oidc/complete
   pkceEnabled: true
   allowedUserGroups:
     - name: conduwuit
-  secret:
-    name: conduwuit-oidc-credentials
-  logo:
-    logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/continuwuity.svg

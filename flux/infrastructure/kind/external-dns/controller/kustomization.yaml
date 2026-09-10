@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - ../../../base/external-dns/controller
 patches:
-  - path: patches/domain.yaml
   - path: patches/rfc2136.yaml

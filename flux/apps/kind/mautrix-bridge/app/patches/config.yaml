@@ -9,11 +9,8 @@ spec:
         domain: uwuity.kind.homelab.test
         address: https://uwuity.kind.homelab.test
       bridge:
-        public_address: https://discord.mautrix.kind.homelab.test
         permissions:
           uwuity.kind.homelab.test: user
           "@kasefuchs:uwuity.kind.homelab.test": admin
-        direct_media:
-          server_name: discord.mautrix.kind.homelab.test
         login_shared_secret_map:
           uwuity.kind.homelab.test: "as_token:$BRIDGE_DOUBLE_PUPPET_AS_TOKEN"

@@ -5,7 +5,4 @@ resources:
 components:
   - ../../../base/victoria-metrics/controller/components/oidc
 patches:
-  - path: patches/oidc.yaml
-  - path: patches/route.yaml
-  - path: patches/config.yaml
   - path: patches/storage.yaml

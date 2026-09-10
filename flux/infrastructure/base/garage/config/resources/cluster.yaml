@@ -28,5 +28,7 @@ spec:
     rpcSecretRef:
       name: garage-secret
       key: rpc-secret
+  webApi:
+    rootDomain: .web.garage.${CLUSTER_DOMAIN}
   logging:
     level: warn

@@ -1,8 +1,0 @@
-apiVersion: pocketid.internal/v1alpha1
-kind: PocketIDOIDCClient
-metadata:
-  name: grafana
-spec:
-  launchUrl: https://grafana.kasefuchs.net
-  callbackUrls:
-    - https://grafana.kasefuchs.net/login/generic_oauth

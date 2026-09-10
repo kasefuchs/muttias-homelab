@@ -4,9 +4,12 @@ metadata:
   name: vikunja
 spec:
   name: Vikunja
-  allowedUserGroups:
-    - name: vikunja
-  secret:
-    name: vikunja-oidc-credentials
   logo:
     logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/vikunja.svg
+  secret:
+    name: vikunja-oidc-credentials
+  launchUrl: https://vikunja.${CLUSTER_DOMAIN}
+  callbackUrls:
+    - https://vikunja.${CLUSTER_DOMAIN}/auth/openid/pocketid
+  allowedUserGroups:
+    - name: vikunja

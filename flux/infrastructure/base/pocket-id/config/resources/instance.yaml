@@ -34,8 +34,11 @@ spec:
         secretKeyRef:
           name: pocket-id-garage-key
           key: secretAccessKey
+  appUrl: https://id.${CLUSTER_DOMAIN}
   route:
     enabled: true
+    hostnames:
+      - id.${CLUSTER_DOMAIN}
     parentRefs:
       - group: gateway.networking.k8s.io
         kind: ListenerSet

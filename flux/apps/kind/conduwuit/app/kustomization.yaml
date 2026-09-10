@@ -3,6 +3,4 @@ kind: Kustomization
 resources:
   - ../../../base/conduwuit/app
 patches:
-  - path: patches/config.yaml
-  - path: patches/route.yaml
   - path: patches/trust.yaml

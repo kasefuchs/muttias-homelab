@@ -26,6 +26,8 @@ spec:
         create: false
       httpRoute:
         enabled: true
+        hostnames:
+          - flux.${CLUSTER_DOMAIN}
         parentRefs:
           - group: gateway.networking.k8s.io
             kind: ListenerSet

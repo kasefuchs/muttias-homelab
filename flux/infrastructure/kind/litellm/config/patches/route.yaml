@@ -1,8 +1,0 @@
-apiVersion: litellm.home-operations.com/v1alpha1
-kind: LiteLLMProxy
-metadata:
-  name: litellm
-spec:
-  route:
-    hostnames:
-      - llm.kind.homelab.test

@@ -5,9 +5,6 @@ metadata:
 spec:
   values:
     route:
-      main:
-        hostnames:
-          - sui.kasefuchs.net
       grpc:
         enabled: true
         kind: GRPCRoute

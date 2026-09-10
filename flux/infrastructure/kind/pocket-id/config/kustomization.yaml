@@ -4,6 +4,3 @@ resources:
   - ../../../base/pocket-id/config
   - resources/secret.yaml
   - resources/user.yaml
-patches:
-  - path: patches/config.yaml
-  - path: patches/route.yaml

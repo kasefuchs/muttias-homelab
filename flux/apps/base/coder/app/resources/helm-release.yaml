@@ -25,6 +25,10 @@ spec:
       service:
         type: ClusterIP
       env:
+        - name: CODER_ACCESS_URL
+          value: https://coder.${CLUSTER_DOMAIN}
+        - name: CODER_WILDCARD_ACCESS_URL
+          value: "*.coder.${CLUSTER_DOMAIN}"
         - name: CODER_OAUTH2_GITHUB_DEFAULT_PROVIDER_ENABLE
           value: "false"
         - name: CODER_PG_CONNECTION_URL
@@ -34,6 +38,8 @@ spec:
               key: uri
       httproute:
         enable: true
+        host: coder.${CLUSTER_DOMAIN}
+        wildcardHost: "*.coder.${CLUSTER_DOMAIN}"
         parentRefs:
           - group: gateway.networking.k8s.io
             kind: ListenerSet

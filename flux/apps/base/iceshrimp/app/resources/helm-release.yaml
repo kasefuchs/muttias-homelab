@@ -21,8 +21,14 @@ spec:
       media:
         enabled: false
     config:
+      Instance:
+        WebDomain: shrimp.${CLUSTER_DOMAIN}
+        AccountDomain: shrimp.${CLUSTER_DOMAIN}
       Security:
         Registrations: Invite
+        # Allow private Storage::ObjectStorage AccessUrl endpoint
+        AllowLocalIPv4: true
+        AllowLocalIPv6: true
       Database:
         Host: "$DB_HOST"
         Port: "$DB_PORT"
@@ -37,9 +43,13 @@ spec:
           Region: "$S3_REGION"
           KeyId: "$S3_KEY_ID"
           SecretKey: "$S3_SECRET_KEY"
+          AccessUrl: https://iceshrimp.web.garage.${CLUSTER_DOMAIN}
+          DisableValidation: true
     route:
       main:
         enabled: true
+        hostnames:
+          - shrimp.${CLUSTER_DOMAIN}
         parentRefs:
           - group: gateway.networking.k8s.io
             kind: ListenerSet

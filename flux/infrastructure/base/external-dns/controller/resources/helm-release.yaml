@@ -17,6 +17,8 @@ spec:
     kind: OCIRepository
     name: external-dns
   values:
+    domainFilters:
+      - ${CLUSTER_DOMAIN}
     logFormat: json
     sources:
       - service

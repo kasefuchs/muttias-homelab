@@ -21,6 +21,8 @@ spec:
       route:
         main:
           enabled: true
+          hostnames:
+            - grafana.${CLUSTER_DOMAIN}
           parentRefs:
             - group: gateway.networking.k8s.io
               kind: ListenerSet
@@ -33,6 +35,8 @@ spec:
         dashboards:
           searchNamespace: ALL
       grafana.ini:
+        server:
+          root_url: https://grafana.${CLUSTER_DOMAIN}
         log:
           mode: console
         log.console:

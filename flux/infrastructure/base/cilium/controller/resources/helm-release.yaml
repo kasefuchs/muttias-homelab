@@ -28,6 +28,8 @@ spec:
         # https://github.com/cilium/cilium/pull/46792
         httpRoute:
           enabled: true
+          hostnames:
+            - hubble.${CLUSTER_DOMAIN}
           parentRefs:
             - group: gateway.networking.k8s.io
               kind: ListenerSet

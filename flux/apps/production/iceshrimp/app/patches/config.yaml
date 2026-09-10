@@ -8,7 +8,3 @@ spec:
       Instance:
         WebDomain: shrimp.floof.fans
         AccountDomain: shrimp.floof.fans
-      Storage:
-        ObjectStorage:
-          AccessUrl: https://iceshrimp.web.garage.kasefuchs.net/
-          DisableValidation: true

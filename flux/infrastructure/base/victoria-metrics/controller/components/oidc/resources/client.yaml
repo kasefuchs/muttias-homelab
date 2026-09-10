@@ -4,11 +4,14 @@ metadata:
   name: grafana
 spec:
   name: Grafana
+  logo:
+    logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/grafana.svg
+  secret:
+    name: grafana-oidc-credentials
+  launchUrl: https://grafana.${CLUSTER_DOMAIN}
+  callbackUrls:
+    - https://grafana.${CLUSTER_DOMAIN}/login/generic_oauth
   pkceEnabled: true
   allowedUserGroups:
     - name: grafana
     - name: grafana-admin
-  secret:
-    name: grafana-oidc-credentials
-  logo:
-    logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/grafana.svg

@@ -20,6 +20,8 @@ spec:
     route:
       main:
         enabled: true
+        hostnames:
+          - sui.${CLUSTER_DOMAIN}
         parentRefs:
           - group: gateway.networking.k8s.io
             kind: ListenerSet

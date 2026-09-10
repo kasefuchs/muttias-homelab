@@ -20,6 +20,8 @@ spec:
     redis_host: litellm-dragonfly
     redis_port: 6379
   route:
+    hostnames:
+      - llm.${CLUSTER_DOMAIN}
     parentRefs:
       - group: gateway.networking.k8s.io
         kind: ListenerSet

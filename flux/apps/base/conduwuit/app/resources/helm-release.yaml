@@ -17,9 +17,19 @@ spec:
     kind: OCIRepository
     name: conduwuit
   values:
+    config:
+      global:
+        allow_federation: true
+        allow_registration: true
+        server_name: uwuity.${CLUSTER_DOMAIN}
+        well_known:
+          client: https://uwuity.${CLUSTER_DOMAIN}
+          server: uwuity.${CLUSTER_DOMAIN}:443
     route:
       main:
         enabled: true
+        hostnames:
+          - uwuity.${CLUSTER_DOMAIN}
         parentRefs:
           - group: gateway.networking.k8s.io
             kind: ListenerSet

@@ -1,8 +1,0 @@
-apiVersion: pocketid.internal/v1alpha1
-kind: PocketIDInstance
-metadata:
-  name: pocket-id
-spec:
-  route:
-    hostnames:
-      - id.kind.homelab.test

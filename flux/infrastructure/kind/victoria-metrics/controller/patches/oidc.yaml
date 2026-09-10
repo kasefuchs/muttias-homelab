@@ -1,8 +1,0 @@
-apiVersion: pocketid.internal/v1alpha1
-kind: PocketIDOIDCClient
-metadata:
-  name: grafana
-spec:
-  launchUrl: https://grafana.kind.homelab.test
-  callbackUrls:
-    - https://grafana.kind.homelab.test/login/generic_oauth

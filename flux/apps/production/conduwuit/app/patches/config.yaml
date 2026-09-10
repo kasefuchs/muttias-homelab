@@ -6,8 +6,6 @@ spec:
   values:
     config:
       global:
-        allow_federation: true
-        allow_registration: true
         new_user_displayname_suffix: "🦊✨"
         server_name: uwuity.floof.fans
         well_known:

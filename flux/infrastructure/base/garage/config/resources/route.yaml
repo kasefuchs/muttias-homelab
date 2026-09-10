@@ -3,6 +3,9 @@ kind: HTTPRoute
 metadata:
   name: garage-s3
 spec:
+  hostnames:
+    - s3.garage.${CLUSTER_DOMAIN}
+    - "*.s3.garage.${CLUSTER_DOMAIN}"
   parentRefs:
     - group: gateway.networking.k8s.io
       kind: ListenerSet
@@ -22,6 +25,8 @@ kind: HTTPRoute
 metadata:
   name: garage-web
 spec:
+  hostnames:
+    - "*.web.garage.${CLUSTER_DOMAIN}"
   parentRefs:
     - group: gateway.networking.k8s.io
       kind: ListenerSet

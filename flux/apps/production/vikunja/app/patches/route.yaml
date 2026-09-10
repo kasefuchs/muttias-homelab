@@ -4,6 +4,7 @@ metadata:
   name: vikunja
 spec:
   values:
-    httpRoute:
-      hostnames:
-        - todo.floof.fans
+    route:
+      main:
+        hostnames:
+          - todo.floof.fans
