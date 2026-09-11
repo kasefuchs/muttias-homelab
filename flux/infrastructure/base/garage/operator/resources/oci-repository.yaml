@@ -6,7 +6,7 @@ spec:
   interval: 1h
   url: oci://ghcr.io/rajsinghtech/charts/garage-operator
   ref:
-    tag: "0.7.8"
+    tag: "0.7.10"
   layerSelector:
     mediaType: application/vnd.cncf.helm.chart.content.v1.tar+gzip
     operation: copy
