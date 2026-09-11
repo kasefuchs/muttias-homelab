@@ -28,12 +28,12 @@ spec:
       valueFrom:
         secretKeyRef:
           name: pocket-id-garage-key
-          key: accessKeyID
+          key: access-key-id
     secretAccessKey:
       valueFrom:
         secretKeyRef:
           name: pocket-id-garage-key
-          key: secretAccessKey
+          key: secret-access-key
   appUrl: https://id.${CLUSTER_DOMAIN}
   route:
     enabled: true

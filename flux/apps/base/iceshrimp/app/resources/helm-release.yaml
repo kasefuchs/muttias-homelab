@@ -41,8 +41,8 @@ spec:
           Endpoint: "$S3_HOST"
           Bucket: "$S3_BUCKET"
           Region: "$S3_REGION"
-          KeyId: "$S3_KEY_ID"
-          SecretKey: "$S3_SECRET_KEY"
+          KeyId: "$S3_ACCESS_KEY_ID"
+          SecretKey: "$S3_SECRET_ACCESS_KEY"
           AccessUrl: https://iceshrimp.web.garage.${CLUSTER_DOMAIN}
           DisableValidation: true
     route:
@@ -85,31 +85,9 @@ spec:
                   secretKeyRef:
                     name: iceshrimp-db-app
                     key: password
-              - name: S3_HOST
-                valueFrom:
-                  secretKeyRef:
-                    name: iceshrimp-garage-key
-                    key: host
-              - name: S3_BUCKET
-                valueFrom:
-                  secretKeyRef:
-                    name: iceshrimp-garage-key
-                    key: bucket
-              - name: S3_REGION
-                valueFrom:
-                  secretKeyRef:
-                    name: iceshrimp-garage-key
-                    key: region
-              - name: S3_KEY_ID
-                valueFrom:
-                  secretKeyRef:
-                    name: iceshrimp-garage-key
-                    key: accessKeyID
-              - name: S3_SECRET_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: iceshrimp-garage-key
-                    key: secretAccessKey
+            envFrom:
+              - secretRef:
+                  name: iceshrimp-garage-key
         containers:
           main:
             image:

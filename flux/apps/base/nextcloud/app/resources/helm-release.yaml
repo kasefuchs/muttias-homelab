@@ -59,8 +59,8 @@ spec:
           existingSecret: nextcloud-garage-key
           secretKeys:
             bucket: bucket
-            accessKey: accessKeyID
-            secretKey: secretAccessKey
+            accessKey: access-key-id
+            secretKey: secret-access-key
       existingSecret:
         enabled: true
         secretName: nextcloud-secret

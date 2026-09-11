@@ -1,0 +1,11 @@
+apiVersion: garage.rajsingh.info/v1beta1
+kind: GarageKey
+metadata:
+  name: ${NAME}-garage-key
+spec:
+  secretTemplate:
+    regionKey: VIKUNJA_FILES_S3_REGION
+    endpointKey: VIKUNJA_FILES_S3_ENDPOINT
+    bucketNameKey: VIKUNJA_FILES_S3_BUCKET
+    accessKeyIdKey: VIKUNJA_FILES_S3_ACCESSKEY
+    secretAccessKeyKey: VIKUNJA_FILES_S3_SECRETKEY

@@ -30,31 +30,9 @@ spec:
                   secretKeyRef:
                     name: matrix-media-repo-db-app
                     key: uri
-              - name: S3_ENDPOINT
-                valueFrom:
-                  secretKeyRef:
-                    name: matrix-media-repo-garage-key
-                    key: host
-              - name: S3_BUCKET
-                valueFrom:
-                  secretKeyRef:
-                    name: matrix-media-repo-garage-key
-                    key: bucket
-              - name: S3_REGION
-                valueFrom:
-                  secretKeyRef:
-                    name: matrix-media-repo-garage-key
-                    key: region
-              - name: S3_ACCESS_KEY_ID
-                valueFrom:
-                  secretKeyRef:
-                    name: matrix-media-repo-garage-key
-                    key: accessKeyID
-              - name: S3_SECRET_ACCESS_KEY
-                valueFrom:
-                  secretKeyRef:
-                    name: matrix-media-repo-garage-key
-                    key: secretAccessKey
+            envFrom:
+              - secretRef:
+                  name: matrix-media-repo-garage-key
     serviceMonitor:
       main:
         enabled: true
@@ -75,10 +53,11 @@ spec:
           tempPath: /tmp/
           ssl: false
           region: "$S3_REGION"
-          endpoint: "$S3_ENDPOINT"
+          endpoint: "$S3_HOST"
           bucketName: "$S3_BUCKET"
           accessKeyId: "$S3_ACCESS_KEY_ID"
           accessSecret: "$S3_SECRET_ACCESS_KEY"
+          publicBaseUrl: https://matrix-media-repo.web.garage.${CLUSTER_DOMAIN}/
     config:
       database:
         postgres: "$DB_URI"

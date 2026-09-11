@@ -1,0 +1,11 @@
+apiVersion: garage.rajsingh.info/v1beta1
+kind: GarageKey
+metadata:
+  name: ${NAME}-garage-key
+spec:
+  secretTemplate:
+    hostKey: S3_HOST
+    regionKey: S3_REGION
+    bucketNameKey: S3_BUCKET
+    accessKeyIdKey: S3_ACCESS_KEY_ID
+    secretAccessKeyKey: S3_SECRET_ACCESS_KEY

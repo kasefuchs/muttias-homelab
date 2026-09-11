@@ -8,8 +8,6 @@ spec:
     namespace: garage-system
   secretTemplate:
     includeBucketName: true
-    accessKeyIdKey: accessKeyID
-    secretAccessKeyKey: secretAccessKey
   bucketPermissions:
     - read: true
       write: true

@@ -5,7 +5,8 @@ resources:
   - resources/namespace.yaml
   - resources/oci-repository.yaml
 patches:
-  - path: patches/garage.yaml
+  - path: patches/garage-bucket.yaml
+  - path: patches/garage-key.yaml
 components:
   - ../../../../components/cnpg
   - ../../../../components/garage

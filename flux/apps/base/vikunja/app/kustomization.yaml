@@ -4,6 +4,8 @@ resources:
   - resources/helm-release.yaml
   - resources/namespace.yaml
   - resources/oci-repository.yaml
+patches:
+  - path: patches/garage-key.yaml
 components:
   - ../../../../components/cnpg
   - ../../../../components/garage
