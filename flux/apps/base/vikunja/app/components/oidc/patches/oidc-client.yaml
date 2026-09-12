@@ -1,15 +1,15 @@
 apiVersion: pocketid.internal/v1alpha1
 kind: PocketIDOIDCClient
 metadata:
-  name: vikunja
+  name: ${NAME}
 spec:
-  name: Vikunja
   logo:
     logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/vikunja.svg
-  secret:
-    name: vikunja-oidc-credentials
   launchUrl: https://vikunja.${CLUSTER_DOMAIN}
   callbackUrls:
     - https://vikunja.${CLUSTER_DOMAIN}/auth/openid/pocketid
-  allowedUserGroups:
-    - name: vikunja
+  secret:
+    keys:
+      issuerUrl: VIKUNJA_AUTH_OPENID_PROVIDERS_POCKETID_AUTHURL
+      clientID: VIKUNJA_AUTH_OPENID_PROVIDERS_POCKETID_CLIENTID
+      clientSecret: VIKUNJA_AUTH_OPENID_PROVIDERS_POCKETID_CLIENTSECRET

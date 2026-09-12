@@ -1,7 +1,7 @@
 apiVersion: pocketid.internal/v1alpha1
 kind: PocketIDOIDCClient
 metadata:
-  name: conduwuit
+  name: ${NAME}
 spec:
   launchUrl: https://uwuity.floof.fans
   callbackUrls:

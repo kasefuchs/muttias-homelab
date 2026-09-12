@@ -18,19 +18,9 @@ spec:
       main:
         containers:
           main:
-            env:
-              VIKUNJA_AUTH_OPENID_PROVIDERS_POCKETID_AUTHURL:
-                valueFrom:
-                  secretKeyRef:
-                    name: vikunja-oidc-credentials
-                    key: issuer_url
-              VIKUNJA_AUTH_OPENID_PROVIDERS_POCKETID_CLIENTID:
-                valueFrom:
-                  secretKeyRef:
-                    name: vikunja-oidc-credentials
-                    key: client_id
-              VIKUNJA_AUTH_OPENID_PROVIDERS_POCKETID_CLIENTSECRET:
-                valueFrom:
-                  secretKeyRef:
-                    name: vikunja-oidc-credentials
-                    key: client_secret
+            envFrom:
+              # TODO: use json patch here!!!!
+              - secretRef:
+                  name: vikunja-garage-key
+              - secretRef:
+                  name: vikunja-oidc-credentials

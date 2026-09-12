@@ -1,16 +1,17 @@
 apiVersion: pocketid.internal/v1alpha1
 kind: PocketIDOIDCClient
 metadata:
-  name: conduwuit
+  name: ${NAME}
 spec:
   name: Continuwuity
   logo:
     logoUrl: https://cdn.jsdelivr.net/gh/selfhst/icons/svg/continuwuity.svg
-  secret:
-    name: conduwuit-oidc-credentials
   launchUrl: https://uwuity.${CLUSTER_DOMAIN}
   callbackUrls:
     - https://uwuity.${CLUSTER_DOMAIN}/_continuwuity/oidc/complete
   pkceEnabled: true
-  allowedUserGroups:
-    - name: conduwuit
+  secret:
+    keys:
+      issuerUrl: CONTINUWUITY_OAUTH__OIDC__DISCOVERY_URL
+      clientID: CONTINUWUITY_OAUTH__OIDC__CLIENT_ID
+      clientSecret: CONTINUWUITY_OAUTH__OIDC__CLIENT_SECRET

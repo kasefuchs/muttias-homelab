@@ -1,7 +1,7 @@
 apiVersion: pocketid.internal/v1alpha1
 kind: PocketIDOIDCClient
 metadata:
-  name: vikunja
+  name: ${NAME}
 spec:
   launchUrl: https://todo.floof.fans
   callbackUrls:

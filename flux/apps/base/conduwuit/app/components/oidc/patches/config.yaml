@@ -4,26 +4,6 @@ metadata:
   name: conduwuit
 spec:
   values:
-    controllers:
-      main:
-        containers:
-          main:
-            env:
-              CONTINUWUITY_OAUTH__OIDC__DISCOVERY_URL:
-                valueFrom:
-                  secretKeyRef:
-                    name: conduwuit-oidc-credentials
-                    key: issuer_url
-              CONTINUWUITY_OAUTH__OIDC__CLIENT_ID:
-                valueFrom:
-                  secretKeyRef:
-                    name: conduwuit-oidc-credentials
-                    key: client_id
-              CONTINUWUITY_OAUTH__OIDC__CLIENT_SECRET:
-                valueFrom:
-                  secretKeyRef:
-                    name: conduwuit-oidc-credentials
-                    key: client_secret
     config:
       global:
         oauth:
@@ -37,3 +17,10 @@ spec:
             profile_key_map:
               displayname: name
               avatar_url: picture
+    controllers:
+      main:
+        containers:
+          main:
+            envFrom:
+              - secretRef:
+                  name: conduwuit-oidc-credentials
