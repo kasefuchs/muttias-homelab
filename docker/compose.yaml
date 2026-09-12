@@ -28,7 +28,7 @@ services:
     environment:
       ENABLE_MANIFEST_CACHE: true
   s3mock:
-    image: adobe/s3mock:5.2.0
+    image: adobe/s3mock:5.2.2
     restart: unless-stopped
     environment:
       COM_ADOBE_TESTING_S3MOCK_STORE_INITIAL_BUCKETS: kopiur
