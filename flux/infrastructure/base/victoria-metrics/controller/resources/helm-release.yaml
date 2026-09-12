@@ -18,29 +18,8 @@ spec:
     name: victoria-metrics
   values:
     grafana:
-      route:
-        main:
-          enabled: true
-          hostnames:
-            - grafana.${CLUSTER_DOMAIN}
-          parentRefs:
-            - group: gateway.networking.k8s.io
-              kind: ListenerSet
-              name: external
-              namespace: gateway-system
-      plugins:
-        - victoriametrics-metrics-datasource
-        - victoriametrics-logs-datasource
-      sidecar:
-        dashboards:
-          searchNamespace: ALL
-      grafana.ini:
-        server:
-          root_url: https://grafana.${CLUSTER_DOMAIN}
-        log:
-          mode: console
-        log.console:
-          format: json
+      enabled: false
+      forceDeployDatasource: true
     vmsingle:
       spec: &json-logs
         extraArgs:

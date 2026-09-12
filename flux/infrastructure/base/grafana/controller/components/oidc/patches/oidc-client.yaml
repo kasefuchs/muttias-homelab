@@ -1,0 +1,19 @@
+apiVersion: pocketid.internal/v1alpha1
+kind: PocketIDOIDCClient
+metadata:
+  name: ${NAME}
+spec:
+  launchUrl: https://grafana.${CLUSTER_DOMAIN}
+  callbackUrls:
+    - https://grafana.${CLUSTER_DOMAIN}/login/generic_oauth
+  pkceEnabled: true
+  allowedUserGroups:
+    - name: ${NAME}
+    - name: grafana-admin
+  secret:
+    keys:
+      clientID: GF_AUTH_GENERIC_OAUTH_CLIENT_ID
+      clientSecret: GF_AUTH_GENERIC_OAUTH_CLIENT_SECRET
+      authorizationUrl: GF_AUTH_GENERIC_OAUTH_AUTH_URL
+      tokenUrl: GF_AUTH_GENERIC_OAUTH_TOKEN_URL
+      userinfoUrl: GF_AUTH_GENERIC_OAUTH_API_URL
