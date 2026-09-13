@@ -3,7 +3,7 @@ kind: RenovateJob
 metadata:
   name: codeberg
 spec:
-  image: ghcr.io/renovatebot/renovate:44.45.4
+  image: ghcr.io/renovatebot/renovate:44.82.5
   schedule: "0 3 * * *"
   parallelism: 3
   provider:
